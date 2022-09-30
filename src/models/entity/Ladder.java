@@ -5,8 +5,8 @@ import models.Cell;
 import models.Symbol;
 
 public class Ladder extends Entity{
-    public Ladder(){
-        super(EntityType.Ladder);
+    public Ladder(int power){
+        super(EntityType.Ladder,power);
     }
 
 }

@@ -15,21 +15,23 @@ import java.util.List;
 
 public class GameController {
     public BoardRegistery createBoard(){
+
         List<EntityPosition>entityPositions=new ArrayList<>();
-        entityPositions.add(new EntityPosition(new Snake(),32,-22));
-        entityPositions.add(new EntityPosition(new Snake(),36,-30));
-        entityPositions.add(new EntityPosition(new Snake(),48,-26));
-        entityPositions.add(new EntityPosition(new Snake(),63,-45));
-        entityPositions.add(new EntityPosition(new Snake(),88,-24));
-        entityPositions.add(new EntityPosition(new Snake(),95,-39));
-        entityPositions.add(new EntityPosition(new Snake(),97,-19));
-        entityPositions.add(new EntityPosition(new Ladder(),1,37));
-        entityPositions.add(new EntityPosition(new Ladder(),4,10));
-        entityPositions.add(new EntityPosition(new Ladder(),20,12));
-        entityPositions.add(new EntityPosition(new Ladder(),28,76));
-        entityPositions.add(new EntityPosition(new Ladder(),50,17));
-        entityPositions.add(new EntityPosition(new Ladder(),71,21));
-        entityPositions.add(new EntityPosition(new Ladder(),88,11));
+        entityPositions.add(new EntityPosition(EntityType.Snake,32,-22));
+        entityPositions.add(new EntityPosition(EntityType.Snake,36,-30));
+        entityPositions.add(new EntityPosition(EntityType.Snake,48,-26));
+        entityPositions.add(new EntityPosition(EntityType.Snake,63,-45));
+        entityPositions.add(new EntityPosition(EntityType.Snake,88,-24));
+        entityPositions.add(new EntityPosition(EntityType.Snake,95,-39));
+        entityPositions.add(new EntityPosition(EntityType.Snake,97,-19));
+        entityPositions.add(new EntityPosition(EntityType.Ladder,1,37));
+        entityPositions.add(new EntityPosition(EntityType.Ladder,8,22));
+        entityPositions.add(new EntityPosition(EntityType.Ladder,4,10));
+        entityPositions.add(new EntityPosition(EntityType.Ladder,20,12));
+        entityPositions.add(new EntityPosition(EntityType.Ladder,28,76));
+        entityPositions.add(new EntityPosition(EntityType.Ladder,50,17));
+        entityPositions.add(new EntityPosition(EntityType.Ladder,71,21));
+        entityPositions.add(new EntityPosition(EntityType.Ladder,88,11));
 
 
         Board board=Board.getBoardBuilder()

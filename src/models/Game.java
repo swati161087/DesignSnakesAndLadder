@@ -2,11 +2,13 @@ package models;
 
 import enums.BoardType;
 import enums.GameStatus;
+import models.entity.Entity;
 import regestries.BoardRegistery;
 import strategies.WinStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Game {
     private Board board;
@@ -35,15 +37,18 @@ public class Game {
     }
 
     public void makeMove(){
+
         int totalPlayers=this.players.size();
         int sizeOfBoard=this.board.getBoard().size();
         this.lastPlayerIndex++;
         lastPlayerIndex%=totalPlayers;
         Player currentPlayer=this.players.get(lastPlayerIndex);
-        System.out.println(currentPlayer.getSymbol().getChar()+ " is playing");
+        System.out.println(currentPlayer.getName()+ " make move");
+        Scanner myObj = new Scanner(System.in);
+        myObj.next();
         int countSix=2;
         int steps=this.dice.rollDice();
-        System.out.println(currentPlayer.getSymbol().getChar()+ " got " + steps);
+        System.out.println(currentPlayer.getName()+ " got " + steps);
         if(steps==6){
            for(int i=1;i<=countSix;i++)
            {
@@ -58,12 +63,12 @@ public class Game {
 
         currentPlayer.makeMove(steps,this.board);
         // check entities at that location.
-        EntityPower entityPower =currentPlayer.getCurrentPosition().getEntityPower();
-        if(entityPower !=null){
-            int newsteps=entityPower.getSteps();
-            if(newsteps<0) System.out.println("oops cut by snake u are going down by " +newsteps);
-            else System.out.println("wow got a ladder going up by " +newsteps);
-            currentPlayer.makeMove(newsteps,board);
+        Entity entity =currentPlayer.getCurrentPosition().getEntity();
+        if(entity !=null){
+            int newSteps=entity.getPower();
+            if(newSteps<0) System.out.println("oops cut by snake u are going down by " +newSteps);
+            else System.out.println("wow got a ladder going up by " +newSteps);
+            currentPlayer.makeMove(newSteps,board);
 
         }
         System.out.println("You are now at " +currentPlayer.getCurrentPosition().getPosition());

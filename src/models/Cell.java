@@ -1,12 +1,14 @@
 package models;
 
+import models.entity.Entity;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Cell {
     private int position;
-    List<Symbol> symbols;
-    EntityPower entityPower;
+    private List<Symbol> symbols;
+    private Entity entity;
     public Cell(int position) {
         this.position = position;
         this.symbols=new ArrayList<>();
@@ -29,11 +31,11 @@ public class Cell {
     public void removeSymbol(Symbol symbol){
         this.symbols.remove(symbol);
     }
-    public EntityPower getEntityPower(){
-        return this.entityPower;
+    public Entity getEntity(){
+        return this.entity;
     }
-
-    public void setEntityPower(EntityPower entityPower) {
-        this.entityPower = entityPower;
+    public Entity setEntity(Entity entity) {
+        this.entity = entity;
+        return entity;
     }
 }

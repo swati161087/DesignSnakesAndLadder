@@ -1,6 +1,8 @@
 package models;
 
 import enums.BoardType;
+import factory.EntityFactory;
+import models.entity.Entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +53,7 @@ public class Board {
             for(EntityPosition entityPosition : entityPositions){
                 board.getBoard()
                         .get(entityPosition.getCellPosition())
-                        .setEntityPower(new EntityPower(entityPosition.getEntity(),entityPosition.getPower()));
+                        .setEntity(EntityFactory.getEntity(entityPosition.getEntityType(),entityPosition.getPower()));
             }
             return board;
         }
