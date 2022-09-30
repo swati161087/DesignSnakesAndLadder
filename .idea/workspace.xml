@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e68869c-3b1e-4faa-8a57-6cbadaea8b41" name="Changes" comment="snakes and ladder">
-      <change afterPath="$PROJECT_DIR$/src/factory/EntityFactory.java" afterDir="false" />
+    <list default="true" id="8e68869c-3b1e-4faa-8a57-6cbadaea8b41" name="Changes" comment="modified the Entity">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameSimulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/EntityPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/EntityPosition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/EntityPower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/entity/Ladder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entity/Ladder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/entity/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/entity/Snake.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1664447578131</updated>
       <workItem from="1664447580482" duration="18131000" />
-      <workItem from="1664514063868" duration="2019000" />
+      <workItem from="1664514063868" duration="2831000" />
     </task>
     <task id="LOCAL-00001" summary="snakes and ladder">
       <created>1664472140745</created>
@@ -90,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664472140745</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="modified the Entity">
+      <created>1664516212728</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1664516212728</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,7 +107,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="snakes and ladder" />
-    <option name="LAST_COMMIT_MESSAGE" value="snakes and ladder" />
+    <MESSAGE value="modified the Entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified the Entity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

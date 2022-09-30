@@ -7,12 +7,10 @@ import models.Symbol;
 public abstract class Entity {
 
     private EntityType entityType;
-    private int power;
-    public Entity( EntityType entityType,int power) {
+
+    public Entity( EntityType entityType) {
         this.entityType = entityType;
-        this.power=power;
+
     }
-    public int getPower() {
-        return power;
-    }
+    public abstract int getPower();
 }
