@@ -1,9 +1,11 @@
 package models;
 
+import enums.PlayerStatus;
+
 public class Player {
     private String name;
-    private Cell currentPosition;
-    private Symbol symbol;
+    private int currentLocation;
+    private PlayerStatus playerStatus;
 
     public String getName() {
         return name;
@@ -12,25 +14,25 @@ public class Player {
     public Player(String name, Symbol symbol)
     {
         this.name=name;
-        this.symbol=symbol;
-    }
-    public void addPlayerToGame(Board board){
-        this.currentPosition=board.getCell(0);
-        this.currentPosition.addSymbol(this.symbol);
+        this.currentLocation=0;
+        this.playerStatus=PlayerStatus.Locked;
     }
 
-    public Cell getCurrentPosition() {
-        return currentPosition;
+    public PlayerStatus getPlayerStatus() {
+        return playerStatus;
     }
 
-    public Symbol getSymbol() {
-        return symbol;
+    public void setPlayerStatus(PlayerStatus playerStatus) {
+        this.playerStatus = playerStatus;
+    }
+
+    public int getCurrentLocation(){
+        return currentLocation;
     }
 
     public void makeMove(int steps,Board board){
 
-        int currentCellLocation=currentPosition.getPosition();
-        int newPosition=currentCellLocation+steps;
+        int newPosition=currentLocation+steps;
         if(newPosition>=board.getBoard().size())
         {
             System.out.println("Can not move");
@@ -40,16 +42,12 @@ public class Player {
         {
             newPosition=0;
         }
-        currentPosition.removeSymbol(this.symbol);
-
-        this.currentPosition=board.getCell(newPosition);
-        this.currentPosition.addSymbol(this.symbol);
+        currentLocation=newPosition;
      }
 
-     public void moveToLocation(Cell newCellPosition)
+     public void moveToLocation(int newCellPosition)
      {
-         int currentCellLocation=currentPosition.getPosition();
-         currentPosition.removeSymbol(this.symbol);
-         currentPosition=newCellPosition;
+         currentLocation=newCellPosition;
      }
+
 }

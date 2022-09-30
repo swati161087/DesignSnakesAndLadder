@@ -2,8 +2,11 @@ package models;
 
 import enums.BoardType;
 import enums.GameStatus;
+import enums.PlayerStatus;
 import models.entity.Entity;
 import regestries.BoardRegistery;
+import strategies.StartStrategy;
+import strategies.StartWithOneAndSixStrategy;
 import strategies.WinStrategy;
 
 import java.util.ArrayList;
@@ -18,11 +21,13 @@ public class Game {
     private GameStatus gameStatus;
     private int lastPlayerIndex;
     private List<WinStrategy> winStrategies;
+    private StartStrategy startStrategy;
     private Game(){
         this.winStrategies=new ArrayList<>();
         this.players=new ArrayList<>();
         this.lastPlayerIndex=-1;
         this.gameStatus=GameStatus.Running;
+        startStrategy=new StartWithOneAndSixStrategy();
     }
     public static Builder createGame(){
         return new Builder();
@@ -46,6 +51,7 @@ public class Game {
         System.out.println(currentPlayer.getName()+ " make move");
         Scanner myObj = new Scanner(System.in);
         myObj.next();
+
         int countSix=2;
         int steps=this.dice.rollDice();
         System.out.println(currentPlayer.getName()+ " got " + steps);
@@ -57,13 +63,17 @@ public class Game {
                System.out.println("got " + val);
                if(val!=6) break;
            }
-           if(steps==36) steps=6;
+           if(steps==18) steps=6;
            System.out.println("you now have " +steps);
         }
-
+        if(currentPlayer.getPlayerStatus().equals(PlayerStatus.Locked) && this.startStrategy.canStart(steps)){
+            currentPlayer.setPlayerStatus(PlayerStatus.Playing);
+        } else if (currentPlayer.getPlayerStatus().equals(PlayerStatus.Locked)) {
+            return;
+        }
         currentPlayer.makeMove(steps,this.board);
-        // check entities at that location.
-        Entity entity =currentPlayer.getCurrentPosition().getEntity();
+        int currentLocation=currentPlayer.getCurrentLocation();
+        Entity entity =board.getBoard().get(currentLocation).getEntity();
         if(entity !=null){
             int newSteps=entity.getPower();
             if(newSteps<0) System.out.println("oops cut by snake u are going down by " +newSteps);
@@ -71,12 +81,13 @@ public class Game {
             currentPlayer.makeMove(newSteps,board);
 
         }
-        System.out.println("You are now at " +currentPlayer.getCurrentPosition().getPosition());
+        System.out.println("You are now at " +currentPlayer.getCurrentLocation());
         for(WinStrategy winStrategy:winStrategies){
             if(winStrategy.checkWin(board,currentPlayer))
             {
                 gameStatus=GameStatus.Won;
                 winner=currentPlayer;
+                currentPlayer.setPlayerStatus(PlayerStatus.Won);
                 break;
             }
         }
@@ -121,9 +132,6 @@ public class Game {
            game.players=this.players;
            game.winStrategies=this.winStrategies;
            game.dice=new Dice(diceSize);
-           for(Player player:players){
-               player.addPlayerToGame(game.board);
-           }
            return game;
         }
     }

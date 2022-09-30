@@ -8,7 +8,7 @@ public class FirstPersonWinStrategy implements WinStrategy{
     @Override
     public boolean checkWin(Board board,  Player player) {
         int maxNumber=board.getBoard().size()-1;
-        if(player.getCurrentPosition().getPosition()==maxNumber){
+        if(player.getCurrentLocation()==maxNumber){
             return true;
         }
         return false;
