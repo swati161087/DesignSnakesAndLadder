@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e68869c-3b1e-4faa-8a57-6cbadaea8b41" name="Changes" comment="modified the Entity">
-      <change afterPath="$PROJECT_DIR$/src/enums/PlayerStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strategies/StartStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strategies/StartWithOneAndSixStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/strategies/FirstPersonWinStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/FirstPersonWinStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strategies/StartWithOneAndSixStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/StartWithOneAndSixStrategy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1664447578131</updated>
       <workItem from="1664447580482" duration="18131000" />
-      <workItem from="1664514063868" duration="8201000" />
+      <workItem from="1664514063868" duration="8518000" />
     </task>
     <task id="LOCAL-00001" summary="snakes and ladder">
       <created>1664472140745</created>
@@ -100,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664517478057</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="modified the Entity">
+      <created>1664536134759</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1664536134759</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

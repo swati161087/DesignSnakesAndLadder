@@ -48,7 +48,7 @@ public class Game {
         this.lastPlayerIndex++;
         lastPlayerIndex%=totalPlayers;
         Player currentPlayer=this.players.get(lastPlayerIndex);
-        System.out.println(currentPlayer.getName()+ " make move");
+        System.out.println(currentPlayer.getName()+ " Make move!!");
         Scanner myObj = new Scanner(System.in);
         myObj.next();
 
@@ -60,14 +60,15 @@ public class Game {
            {
                int val=this.dice.rollDice();
                steps+=val;
-               System.out.println("got " + val);
+               System.out.println("you have got " + val);
                if(val!=6) break;
            }
            if(steps==18) steps=6;
-           System.out.println("you now have " +steps);
+           System.out.println("Now,you now have " +steps);
         }
         if(currentPlayer.getPlayerStatus().equals(PlayerStatus.Locked) && this.startStrategy.canStart(steps)){
             currentPlayer.setPlayerStatus(PlayerStatus.Playing);
+            System.out.println("Hey! you are unlocked");
         } else if (currentPlayer.getPlayerStatus().equals(PlayerStatus.Locked)) {
             return;
         }
@@ -76,8 +77,8 @@ public class Game {
         Entity entity =board.getBoard().get(currentLocation).getEntity();
         if(entity !=null){
             int newSteps=entity.getPower();
-            if(newSteps<0) System.out.println("oops cut by snake u are going down by " +newSteps);
-            else System.out.println("wow got a ladder going up by " +newSteps);
+            if(newSteps<0) System.out.println("Op's cut by snake and you are going down by " +newSteps);
+            else System.out.println("WOW ! You have got a ladder and you are going up by " +newSteps);
             currentPlayer.makeMove(newSteps,board);
 
         }
